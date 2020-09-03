@@ -90,7 +90,6 @@ class FiboEnc(tk.Tk):
             textkey = textkey.replace(" ", "")
 
             for i in textkey:
-                self.outPut.delete("1.0", "end")
                 self.finaloutput.append(ord(i) + finalkey)
             self.outPut.insert("1.0", self.finaloutput)
 
