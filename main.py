@@ -50,13 +50,13 @@ class FiboEnc(tk.Tk):
                     a += b
                     b = a - b
             finalkey = b
-            print(finalkey)
+
 
         def enCrypt():
             textkey = self.enter.get("1.0", "end")
             textkey=textkey.lower()
             textkey=textkey.strip()
-            print(textkey)
+
 
         self.button3 = tk.Button(select_3, height=1, width=10, text="Decrypt", command=deCrypt, padx=10, )
         self.button3.grid(row=1, column=2, ipadx=10)
