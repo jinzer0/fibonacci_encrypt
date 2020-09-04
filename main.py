@@ -45,6 +45,7 @@ class FiboEnc(tk.Tk):
         def deCrypt():
             a = 1
             b = 1
+
             finalkey = 0
             key = self.enter_2.get()
             for i in range(int(key) - 1):
