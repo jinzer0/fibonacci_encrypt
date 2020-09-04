@@ -1,5 +1,4 @@
 import tkinter as tk
-import random as r
 
 
 class FiboEnc(tk.Tk):
@@ -27,10 +26,6 @@ class FiboEnc(tk.Tk):
 
         contents = tk.Frame(self)
         contents.pack(side="bottom")
-
-        rValue = tk.IntVar()
-
-        te = ["Decrypt", "Encrypt"]
 
         self.name = tk.Label(select, text="피보나치 수열을 이용한 간단한 암호화/복호화")
         self.name.pack(pady=20)
@@ -63,15 +58,13 @@ class FiboEnc(tk.Tk):
             textkey = self.enter.get("1.0", "end")
             textkey = textkey.strip()
             textkey = textkey.split(" ")
-            self.outPut.delete("1.0","end")
+            self.outPut.delete("1.0", "end")
             for i in textkey:
-                i=int(i)
-                self.outPut.insert("2.0",chr(i-finalkey))
-
+                i = int(i)
+                self.outPut.insert("2.0", chr(i - finalkey))
 
         def enCrypt():
             self.outPut.config(state="normal")
-            self.outPut.delete("1.0","end")
             a = 1
             b = 1
             finalkey = 0
@@ -90,12 +83,11 @@ class FiboEnc(tk.Tk):
             textkey = textkey.replace(" ", "")
 
             for i in textkey:
-                self.outPut.delete("1.0", "end")
                 self.finaloutput.append(ord(i) + finalkey)
+
+            self.outPut.delete("1.0", "end")
             self.outPut.insert("1.0", self.finaloutput)
-
-
-
+            self.finaloutput = []
 
         self.button3 = tk.Button(select_3, height=1, width=10, text="Decrypt", command=deCrypt, padx=10, )
         self.button3.grid(row=1, column=2, ipadx=10)
